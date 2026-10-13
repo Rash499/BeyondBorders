@@ -1,6 +1,6 @@
 :root {
   --ink: #15191f;
-  --paper: #f3f7fb;
+  --paper: #e5f1fa;
   --red: #c51f32;
   --muted: #686d74;
   --line: #d8d5ce;
@@ -13,7 +13,7 @@ body {
   color: var(--ink);
   background:
     radial-gradient(ellipse at 12% 0%, rgba(197,31,50,.055), transparent 36%),
-    linear-gradient(135deg, #eef5fa 0%, #e7f0f6 52%, #f5f7f8 100%);
+    linear-gradient(135deg, #dcecf7 0%, #eaf4fb 52%, #f4f8fc 100%);
   font-family: "FM Abhaya","FMAbhaya","Iskoola Pota","Nirmala UI",serif;
 }
 .instructions,.edit-note {
@@ -65,7 +65,7 @@ body {
   padding:2.8% 4.5%;
   border-top:10px solid var(--red);
   border-bottom:1px solid rgba(21,25,31,.08);
-  background:linear-gradient(110deg,#fbfdff 0%,#eaf2f8 100%);
+  background:linear-gradient(110deg,#f8fcff 0%,#dcecf7 100%);
 }
 .identity { display:flex; align-items:center; gap:14px; min-width:0; }
 .brand-logo {
