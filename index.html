@@ -48,14 +48,11 @@
     background: var(--paper);
   }
   .identity { display: flex; align-items: center; gap: 14px; min-width: 0; }
-  .monogram {
-    width: clamp(38px, 5vw, 56px);
-    height: clamp(38px, 5vw, 56px);
-    display: grid;
-    place-items: center;
-    background: var(--ink);
-    color: white;
-    font: 900 clamp(20px, 2.8vw, 30px)/1 Georgia, serif;
+  .brand-logo {
+    width: clamp(44px, 6vw, 68px);
+    height: clamp(44px, 6vw, 68px);
+    object-fit: contain;
+    display: block;
     flex: 0 0 auto;
   }
   .brand { font: 900 clamp(17px, 2.7vw, 29px)/1 Georgia, "Times New Roman", serif; letter-spacing: .035em; white-space: nowrap; }
@@ -169,7 +166,7 @@
   <main class="post" aria-label="Beyond Borders editorial Facebook post">
     <header class="masthead">
       <div class="identity">
-        <div class="monogram">B.</div>
+        <img class="brand-logo" src="logo.jpg" alt="Beyond Borders logo">
         <div>
           <div class="brand">BEYOND BORDERS</div>
           <div class="strapline">සීමාවෙන් ඔබ්බට ලෝකය කියවමු</div>
