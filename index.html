@@ -202,5 +202,14 @@
   </main>
 
   <div class="edit-note">සටහන: සැබෑ පුවත් ඡායාරූපයක් එක් කළ පසු placeholder ඉවත් කරන්න. ඒ සඳහා CSS හි <code>.photo-placeholder</code> කොටස මකා දැමීම ප්‍රමාණවත්. දිගු ශීර්ෂ සඳහා අකුරු ප්‍රමාණය අඩු කරන්න; අතිරේක ලේබල් සහ අලංකාර අංග එක් කිරීමෙන් වළකින්න.</div>
+<script>
+  // Keep the placeholder only when the news image is missing.
+  const imageCheck = new Image();
+  imageCheck.onload = () => {
+    const placeholder = document.querySelector(".photo-placeholder");
+    if (placeholder) placeholder.style.display = "none";
+  };
+  imageCheck.src = "news-photo.jpg";
+</script>
 </body>
 </html>
