@@ -1,6 +1,6 @@
 :root {
   --ink: #15191f;
-  --paper: #f7f5f0;
+  --paper: #f3f7fb;
   --red: #c51f32;
   --muted: #686d74;
   --line: #d8d5ce;
@@ -12,8 +12,8 @@ body {
   padding: 28px;
   color: var(--ink);
   background:
-    radial-gradient(ellipse at 12% 0%, rgba(197,31,50,.08), transparent 34%),
-    #e4e3df;
+    radial-gradient(ellipse at 12% 0%, rgba(197,31,50,.055), transparent 36%),
+    linear-gradient(135deg, #eef5fa 0%, #e7f0f6 52%, #f5f7f8 100%);
   font-family: "FM Abhaya","FMAbhaya","Iskoola Pota","Nirmala UI",serif;
 }
 .instructions,.edit-note {
@@ -65,7 +65,7 @@ body {
   padding:2.8% 4.5%;
   border-top:10px solid var(--red);
   border-bottom:1px solid rgba(21,25,31,.08);
-  background:linear-gradient(110deg,#fbfaf6 0%,#f0eee8 100%);
+  background:linear-gradient(110deg,#fbfdff 0%,#eaf2f8 100%);
 }
 .identity { display:flex; align-items:center; gap:14px; min-width:0; }
 .brand-logo {
@@ -120,7 +120,7 @@ body {
   text-align:center;
   color:#353a3e;
   padding:24px;
-  background:repeating-linear-gradient(135deg,#d9d7d0,#d9d7d0 14px,#ceccc5 14px,#ceccc5 28px);
+  background:repeating-linear-gradient(135deg,#e1ebf1,#e1ebf1 14px,#d5e2eb 14px,#d5e2eb 28px);
 }
 .photo-placeholder strong { font:900 clamp(18px,2.8vw,30px)/1.2 Georgia,serif; letter-spacing:.1em; }
 .photo-placeholder span { margin-top:10px; font-size:clamp(11px,1.4vw,15px); }
