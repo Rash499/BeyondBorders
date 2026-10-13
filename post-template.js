@@ -3,7 +3,7 @@
   const toggle = document.getElementById("togglePostView");
   const errorBox = document.getElementById("postError");
   const byId = (id) => document.getElementById(id);
-  const setText = (id, value) => { byId(id).textContent = value || ""; };
+  const setText = (id, value) => { const el = byId(id); if (el) el.textContent = value || ""; };
 
   toggle.addEventListener("click", () => {
     const onlyPost = body.classList.toggle("post-only");
