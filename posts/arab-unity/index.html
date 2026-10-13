@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Borders | අරාබි එක්සත්කමේ අසාර්ථක සිහිනය</title>
+<style>
+  :root { --ink:#171b20; --paper:#f5f3ee; --red:#c62832; --muted:#6d7177; --line:#d7d4cd; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:28px; background:#e6e5e1; color:var(--ink); font-family:"Noto Sans Sinhala","Iskoola Pota","Nirmala UI",Arial,sans-serif; }
+  .instructions,.edit-note { max-width:1080px; margin:0 auto 16px; color:#33383d; font-size:14px; line-height:1.7; }
+  .post { width:min(100%,1080px); aspect-ratio:1; margin:auto; overflow:hidden; display:flex; flex-direction:column; background:var(--paper); box-shadow:0 16px 48px rgba(20,22,24,.15); }
+  .masthead { min-height:12%; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:3.3% 4.5%; border-top:9px solid var(--red); background:var(--paper); }
+  .identity { display:flex; align-items:center; gap:14px; min-width:0; }
+  .brand-logo { width:clamp(44px,6vw,68px); height:clamp(44px,6vw,68px); object-fit:contain; display:block; flex:0 0 auto; }
+  .brand { font:900 clamp(17px,2.7vw,29px)/1 Georgia,"Times New Roman",serif; letter-spacing:.035em; white-space:nowrap; }
+  .strapline { margin-top:6px; color:var(--muted); font-size:clamp(9px,1.15vw,13px); letter-spacing:.015em; }
+  .edition { text-align:right; font-size:clamp(9px,1.15vw,13px); color:var(--muted); line-height:1.6; white-space:nowrap; }
+  .edition strong { display:block; color:var(--red); font-size:clamp(10px,1.35vw,15px); letter-spacing:.08em; }
+  .photo-wrap { position:relative; flex:1 1 52%; min-height:0; background:#b7b7b2; overflow:hidden; }
+  .photo { position:absolute; inset:0; background-image:url('news-photo.jpg'); background-position:center; background-size:cover; }
+  .photo-placeholder { position:absolute; inset:0; display:grid; place-content:center; text-align:center; color:#353a3e; padding:24px; background:repeating-linear-gradient(135deg,#d6d4cd,#d6d4cd 14px,#cfcdc6 14px,#cfcdc6 28px); }
+  .photo-placeholder strong { font-size:clamp(18px,2.8vw,30px); letter-spacing:.08em; }
+  .photo-placeholder span { margin-top:8px; font-size:clamp(11px,1.4vw,15px); }
+  .photo-caption { position:absolute; bottom:0; left:0; padding:34px 4.5% 10px; width:100%; background:linear-gradient(transparent,rgba(0,0,0,.7)); color:white; font-size:clamp(10px,1.25vw,14px); }
+  .story { padding:3.1% 4.5% 2.6%; background:var(--paper); display:flex; flex-direction:column; justify-content:center; }
+  .kicker { display:flex; align-items:center; gap:10px; color:var(--red); font-size:clamp(10px,1.35vw,15px); font-weight:900; letter-spacing:.04em; margin-bottom:1.5%; }
+  .kicker::before { content:""; width:24px; height:3px; background:var(--red); }
+  h1 { margin:0; max-width:100%; font-size:clamp(25px,4.25vw,46px); line-height:1.24; font-weight:900; letter-spacing:-.025em; text-wrap:balance; }
+  .summary { max-width:95%; margin:1.8% 0 0; color:#4f5357; font-size:clamp(12px,1.45vw,16px); line-height:1.55; }
+  .bottomline { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:2.3%; padding-top:1.8%; border-top:1px solid var(--line); color:var(--muted); font-size:clamp(9px,1.15vw,13px); }
+  .bottomline strong { color:var(--ink); letter-spacing:.06em; }
+  .category { color:var(--red); font-weight:800; text-align:right; }
+  @media(max-width:560px) { body{padding:10px}.masthead{gap:8px}.identity{gap:8px}.strapline,.edition{font-size:8px} }
+  @media print { @page{size:1080px 1080px;margin:0} body{padding:0;background:white}.instructions,.edit-note{display:none}.post{width:1080px;height:1080px;box-shadow:none} }
+</style>
+</head>
+<body>
+  <div class="instructions"><strong>Beyond Borders — editorial Facebook post.</strong> මෙම ෆෝල්ඩරයට පුවත් ඡායාරූපයක් <code>news-photo.jpg</code> ලෙස එක් කරන්න. JPEG ලෙස සුරැකීමට browser screenshot එකක් ගෙන Paint තුළ JPEG ලෙස Save as කරන්න.</div>
+  <main class="post" aria-label="Beyond Borders editorial Facebook post">
+    <header class="masthead">
+      <div class="identity">
+        <img class="brand-logo" src="../../logo.jpg" alt="Beyond Borders logo">
+        <div><div class="brand">BEYOND BORDERS</div><div class="strapline">සීමාවෙන් ඔබ්බට ලෝකය කියවමු</div></div>
+      </div>
+      <div class="edition"><strong>WORLD DESK</strong>භූ දේශපාලනය · ලෝක පුවත්</div>
+    </header>
+    <section class="photo-wrap" aria-label="News photograph">
+      <div class="photo"></div>
+      <div class="photo-placeholder"><strong>ADD YOUR NEWS PHOTO</strong><span>Place your image here as news-photo.jpg</span></div>
+      <div class="photo-caption">අරාබි එක්සත්කමේ සිහිනය සහ කලාපීය බලතුලනය</div>
+    </section>
+    <section class="story">
+      <div class="kicker">ගෝලීය විමසුම / WORLD BRIEF</div>
+      <h1>අරාබි ලෝකය කිසිදා එක්සත් නොවූයේ ඇයි? ලෝක බලතුලනය වෙනස් කළ හැකිව තිබූ අසාර්ථක සිහිනය</h1>
+      <p class="summary">පොදු භාෂාවක්, ඉතිහාසයක් සහ සංස්කෘතික බැඳීම් තිබුණද, අරාබි රාජ්‍යයන් එක්සත් දේශපාලන බලයක් බවට පත් නොවීය. ජාතික අභිලාෂ, නායකත්ව තරග, විදේශීය බලපෑම් සහ කලාපීය ගැටුම් එම සිහිනයට බාධා කළේ කෙසේද? එය සාර්ථක වූයේ නම් මැදපෙරදිගත් ලෝක බලතුලනයත් වෙනස් විය හැකිව තිබුණි.</p>
+      <footer class="bottomline">
+        <span><strong>BEYOND BORDERS</strong> &nbsp;|&nbsp; සිරස්තලයෙන් ඔබ්බට</span>
+        <span class="category">ඉතිහාසය · භූ දේශපාලනය</span>
+      </footer>
+    </section>
+  </main>
+  <div class="edit-note">සටහන: ඔබේ පුවත් ඡායාරූපය <code>news-photo.jpg</code> නමින් මෙම ෆෝල්ඩරයට දමන්න. ඡායාරූපය නොමැති විට placeholder එක පෙන්වනු ඇත.</div>
+<script>
+  const imageCheck = new Image();
+  imageCheck.onload = () => { const placeholder = document.querySelector(".photo-placeholder"); if (placeholder) placeholder.style.display = "none"; };
+  imageCheck.src = "news-photo.jpg";
+</script>
+</body>
+</html>
