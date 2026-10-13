@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Borders | Editorial post</title>
+<link rel="stylesheet" href="post-template.css">
+</head>
+<body>
+  <div class="instructions"><strong>Beyond Borders — reusable editorial template.</strong> Post එකේ content එක <code>posts/your-post-folder/content.json</code> ගොනුවෙන් load වේ. අලුත් post එකක් සෑදීමට content file එක පමණක් එකතු කරන්න.</div>
+  <div class="toolbar"><button class="view-button" id="togglePostView" type="button" aria-pressed="false">Show only the post</button></div>
+  <div id="postError" class="post-error" role="alert" hidden></div>
+  <main class="post" aria-label="Beyond Borders editorial Facebook post">
+    <header class="masthead">
+      <div class="identity">
+        <img class="brand-logo" src="logo.jpg" alt="Beyond Borders logo">
+        <div><div class="brand">BEYOND BORDERS</div><div class="strapline">සීමාවෙන් ඔබ්බට ලෝකය කියවමු</div></div>
+      </div>
+      <div class="edition"><strong>WORLD DESK</strong>භූ දේශපාලනය · ලෝක පුවත්</div>
+    </header>
+    <section class="photo-wrap" aria-label="News photograph">
+      <div class="photo" id="postPhoto"></div>
+      <div class="photo-placeholder" id="photoPlaceholder"><strong>ADD YOUR NEWS PHOTO</strong><span id="photoPlaceholderName">news-photo.jpg</span></div>
+      <div class="photo-caption" id="photoCaption"></div>
+    </section>
+    <section class="story">
+      <div class="kicker" id="postKicker">ගෝලීය විමසුම / WORLD BRIEF</div>
+      <h1 id="postTitle">Loading post…</h1>
+      <p class="summary" id="postSummary"></p>
+      <footer class="bottomline">
+        <span><strong>BEYOND BORDERS</strong> &nbsp;|&nbsp; සිරස්තලයෙන් ඔබ්බට</span>
+        <span class="category" id="postCategory">භූ දේශපාලනය</span>
+      </footer>
+    </section>
+  </main>
+  <div class="edit-note">Post content එක වෙනස් කිරීමට අදාළ <code>content.json</code> ගොනුව edit කරන්න.</div>
+<script src="post-template.js"></script>
+</body>
+</html>
