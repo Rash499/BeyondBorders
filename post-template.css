@@ -11,9 +11,7 @@ body {
   margin: 0;
   padding: 28px;
   color: var(--ink);
-  background:
-    radial-gradient(ellipse at 12% 0%, rgba(197,31,50,.07), transparent 36%),
-    linear-gradient(135deg, #ffe8bd 0%, #fff3d9 52%, #fffaf0 100%);
+  background: #f1f3f5;
   font-family: "FM Abhaya","FMAbhaya","Iskoola Pota","Nirmala UI",serif;
 }
 .instructions,.edit-note {
