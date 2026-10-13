@@ -18,7 +18,7 @@
   .edition { text-align:right; font-size:clamp(9px,1.15vw,13px); color:var(--muted); line-height:1.6; white-space:nowrap; }
   .edition strong { display:block; color:var(--red); font-size:clamp(10px,1.35vw,15px); letter-spacing:.08em; }
   .photo-wrap { position:relative; flex:1 1 52%; min-height:0; background:#b7b7b2; overflow:hidden; }
-  .photo { position:absolute; inset:0; background-image:url('news-photo.jpg'); background-position:center; background-size:cover; }
+  .photo { position:absolute; inset:0; background-image:url('arab_mapo.jpg'); background-position:center; background-size:cover; }
   .photo-placeholder { position:absolute; inset:0; display:grid; place-content:center; text-align:center; color:#353a3e; padding:24px; background:repeating-linear-gradient(135deg,#d6d4cd,#d6d4cd 14px,#cfcdc6 14px,#cfcdc6 28px); }
   .photo-placeholder strong { font-size:clamp(18px,2.8vw,30px); letter-spacing:.08em; }
   .photo-placeholder span { margin-top:8px; font-size:clamp(11px,1.4vw,15px); }
@@ -36,7 +36,7 @@
 </style>
 </head>
 <body>
-  <div class="instructions"><strong>Beyond Borders — editorial Facebook post.</strong> මෙම ෆෝල්ඩරයට පුවත් ඡායාරූපයක් <code>news-photo.jpg</code> ලෙස එක් කරන්න. JPEG ලෙස සුරැකීමට browser screenshot එකක් ගෙන Paint තුළ JPEG ලෙස Save as කරන්න.</div>
+  <div class="instructions"><strong>Beyond Borders — editorial Facebook post.</strong> මෙම ෆෝල්ඩරයේ <code>arab_mapo.jpg</code> ඡායාරූපය භාවිතා කරයි. JPEG ලෙස සුරැකීමට browser screenshot එකක් ගෙන Paint තුළ JPEG ලෙස Save as කරන්න.</div>
   <main class="post" aria-label="Beyond Borders editorial Facebook post">
     <header class="masthead">
       <div class="identity">
@@ -47,7 +47,7 @@
     </header>
     <section class="photo-wrap" aria-label="News photograph">
       <div class="photo"></div>
-      <div class="photo-placeholder"><strong>ADD YOUR NEWS PHOTO</strong><span>Place your image here as news-photo.jpg</span></div>
+      <div class="photo-placeholder"><strong>ADD YOUR NEWS PHOTO</strong><span>Image: arab_mapo.jpg</span></div>
       <div class="photo-caption">අරාබි එක්සත්කමේ සිහිනය සහ කලාපීය බලතුලනය</div>
     </section>
     <section class="story">
@@ -60,11 +60,11 @@
       </footer>
     </section>
   </main>
-  <div class="edit-note">සටහන: ඔබේ පුවත් ඡායාරූපය <code>news-photo.jpg</code> නමින් මෙම ෆෝල්ඩරයට දමන්න. ඡායාරූපය නොමැති විට placeholder එක පෙන්වනු ඇත.</div>
+  <div class="edit-note">ඡායාරූපය නොමැති විට placeholder එක පෙන්වනු ඇත.</div>
 <script>
   const imageCheck = new Image();
   imageCheck.onload = () => { const placeholder = document.querySelector(".photo-placeholder"); if (placeholder) placeholder.style.display = "none"; };
-  imageCheck.src = "news-photo.jpg";
+  imageCheck.src = "arab_mapo.jpg";
 </script>
 </body>
 </html>
