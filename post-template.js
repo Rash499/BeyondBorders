@@ -37,11 +37,11 @@
     const placeholder = byId("photoPlaceholder");
     const imageName = post.photo || "";
     if (imageName) {
-      photo.style.backgroundImage = `url("${encodeURI(imageName).replace(/"/g, "%22")}")`;
+      const imageUrl = new URL(imageName, new URL(contentUrl, window.location.href)).href;\n      photo.style.backgroundImage = `url("${imageUrl.replace(/"/g, "%22")}")`;
       const img = new Image();
       img.onload = () => { placeholder.style.display = "none"; };
       img.onerror = () => { placeholder.style.display = "grid"; };
-      img.src = imageName;
+      img.src = imageUrl;
     } else {
       photo.style.backgroundImage = "none";
       placeholder.style.display = "grid";
