@@ -1,75 +1,160 @@
 <!DOCTYPE html>
 <html lang="si">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Beyond Borders — Facebook Post Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Borders | Editorial Post</title>
 <style>
   :root {
-    --navy: #07111f;
-    --navy-2: #0c1b2d;
-    --red: #e63946;
-    --white: #f7f9fc;
-    --muted: #b8c4d3;
+    --ink: #171b20;
+    --paper: #f5f3ee;
+    --red: #c62832;
+    --muted: #6d7177;
+    --line: #d7d4cd;
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0; padding: 28px; background: #e8edf3;
-    font-family: "Noto Sans Sinhala", "Iskoola Pota", "Nirmala UI", Arial, sans-serif; color: var(--white);
+    margin: 0;
+    padding: 28px;
+    background: #e6e5e1;
+    color: var(--ink);
+    font-family: "Noto Sans Sinhala", "Iskoola Pota", "Nirmala UI", Arial, sans-serif;
   }
-  .instructions { max-width: 1080px; margin: 0 auto 18px; color: #253244; font-size: 14px; line-height: 1.5; }
+  .instructions, .edit-note {
+    max-width: 1080px;
+    margin: 0 auto 16px;
+    color: #33383d;
+    font-size: 14px;
+    line-height: 1.7;
+  }
   .post {
-    width: min(100%, 1080px); aspect-ratio: 1 / 1; margin: auto; overflow: hidden;
-    position: relative; isolation: isolate; display: flex; flex-direction: column;
-    background: var(--navy); box-shadow: 0 18px 55px rgba(6, 17, 31, .22);
+    width: min(100%, 1080px);
+    aspect-ratio: 1;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    box-shadow: 0 16px 48px rgba(20, 22, 24, .15);
+  }
+  .masthead {
+    min-height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 3.3% 4.5%;
+    border-top: 9px solid var(--red);
+    background: var(--paper);
+  }
+  .identity { display: flex; align-items: center; gap: 14px; min-width: 0; }
+  .monogram {
+    width: clamp(38px, 5vw, 56px);
+    height: clamp(38px, 5vw, 56px);
+    display: grid;
+    place-items: center;
+    background: var(--ink);
+    color: white;
+    font: 900 clamp(20px, 2.8vw, 30px)/1 Georgia, serif;
+    flex: 0 0 auto;
+  }
+  .brand { font: 900 clamp(17px, 2.7vw, 29px)/1 Georgia, "Times New Roman", serif; letter-spacing: .035em; white-space: nowrap; }
+  .strapline { margin-top: 6px; color: var(--muted); font-size: clamp(9px, 1.15vw, 13px); letter-spacing: .015em; }
+  .edition { text-align: right; font-size: clamp(9px, 1.15vw, 13px); color: var(--muted); line-height: 1.6; white-space: nowrap; }
+  .edition strong { display: block; color: var(--red); font-size: clamp(10px, 1.35vw, 15px); letter-spacing: .08em; }
+  .photo-wrap {
+    position: relative;
+    flex: 1 1 60%;
+    min-height: 0;
+    background: #b7b7b2;
+    overflow: hidden;
   }
   .photo {
-    position: absolute; inset: 0 0 20% 0; z-index: -2;
-    background-image: linear-gradient(180deg, rgba(4,12,22,.18), rgba(4,12,22,.18)),
-      url('news-photo.jpg');
-    background-size: cover; background-position: center;
-    background-color: #203247;
+    position: absolute;
+    inset: 0;
+    background-image: url('news-photo.jpg');
+    background-position: center;
+    background-size: cover;
   }
-  .photo-hint {
-    position: absolute; top: 43%; left: 50%; transform: translate(-50%, -50%);
-    width: 76%; text-align: center; color: rgba(255,255,255,.76);
-    font-size: clamp(13px, 2.2vw, 24px); font-weight: 700; letter-spacing: .12em;
-    text-transform: uppercase; text-shadow: 0 2px 12px #000;
-    pointer-events: none;
+  .photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    color: #353a3e;
+    padding: 24px;
+    background: repeating-linear-gradient(135deg, #d6d4cd, #d6d4cd 14px, #cfcdc6 14px, #cfcdc6 28px);
   }
-  .topbar {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 4.2% 5%; background: linear-gradient(90deg, rgba(5,15,28,.96), rgba(5,15,28,.62));
-    border-bottom: 3px solid var(--red); gap: 14px;
+  .photo-placeholder strong { font-size: clamp(18px, 2.8vw, 30px); letter-spacing: .08em; }
+  .photo-placeholder span { margin-top: 8px; font-size: clamp(11px, 1.4vw, 15px); }
+  .photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px 4.5%;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,.7));
+    color: white;
+    font-size: clamp(10px, 1.25vw, 14px);
+    padding-top: 34px;
   }
-  .brand { display: flex; align-items: center; gap: 13px; min-width: 0; }
-  .mark {
-    width: clamp(38px, 6.2vw, 66px); aspect-ratio: 1; display: grid; place-items: center;
-    border: 2px solid var(--white); border-radius: 50%; font-size: clamp(19px, 3.2vw, 34px);
-    font-weight: 900; letter-spacing: -.08em; position: relative; flex: 0 0 auto;
+  .story {
+    padding: 3.3% 4.5% 3%;
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  .mark::after { content: ''; position: absolute; width: 120%; height: 3px; background: var(--red); transform: rotate(-38deg); }
-  .brand-name { font-weight: 900; letter-spacing: 0; font-size: clamp(17px, 3.1vw, 34px); line-height: 1; white-space: nowrap; }
-  .brand-sub { color: var(--muted); font-size: clamp(8px, 1.15vw, 13px); letter-spacing: 0; margin-top: 7px; }
-  .tag { color: white; background: var(--red); padding: 9px 13px; font-size: clamp(9px, 1.3vw, 15px); font-weight: 800; letter-spacing: 0; white-space: nowrap; }
-  .spacer { flex: 1; }
-  .headline-area {
-    padding: 0 5% 4.4%; margin-top: auto;
-    background: linear-gradient(180deg, transparent 0%, rgba(5,14,26,.76) 16%, #07111f 46%);
+  .kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--red);
+    font-size: clamp(10px, 1.35vw, 15px);
+    font-weight: 900;
+    letter-spacing: .04em;
+    margin-bottom: 1.5%;
   }
-  .eyebrow { display: flex; align-items: center; gap: 10px; color: #ff6670; font-weight: 800; letter-spacing: 0; font-size: clamp(10px, 1.55vw, 17px); margin-bottom: 2.1%; }
-  .eyebrow::before { content: ''; display: block; width: 28px; height: 3px; background: var(--red); }
+  .kicker::before { content: ""; width: 24px; height: 3px; background: var(--red); }
   h1 {
-    margin: 0; font-size: clamp(30px, 6.15vw, 68px); line-height: 1.15;
-    letter-spacing: 0; font-weight: 900; max-width: 100%;
+    margin: 0;
+    max-width: 100%;
+    font-size: clamp(27px, 5.2vw, 57px);
+    line-height: 1.24;
+    font-weight: 900;
+    letter-spacing: -.025em;
     text-wrap: balance;
   }
-  .summary { color: #d5deea; font-size: clamp(13px, 2vw, 22px); line-height: 1.5; margin: 2.6% 0 0; max-width: 94%; }
-  .footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 3.1%; margin-top: 3.2%; border-top: 1px solid rgba(255,255,255,.22); color: var(--muted); font-size: clamp(9px, 1.35vw, 15px); letter-spacing: 0; }
-  .footer strong { color: white; }
-  .footer .breaking { color: white; background: var(--red); padding: 7px 10px; font-weight: 800; }
-  .edit-note { max-width: 1080px; margin: 14px auto 0; color: #344256; font-size: 13px; }
-  @media (max-width: 520px) { body { padding: 10px; } .topbar { gap: 8px; } .tag { padding: 7px; } .brand { gap: 8px; } .brand-sub { letter-spacing: 0; } }
+  .summary {
+    max-width: 95%;
+    margin: 1.8% 0 0;
+    color: #4f5357;
+    font-size: clamp(12px, 1.65vw, 18px);
+    line-height: 1.6;
+  }
+  .bottomline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 2.8%;
+    padding-top: 2%;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: clamp(9px, 1.15vw, 13px);
+  }
+  .bottomline strong { color: var(--ink); letter-spacing: .06em; }
+  .category { color: var(--red); font-weight: 800; text-align: right; }
+  .edit-note { margin-top: 14px; }
+  @media (max-width: 560px) {
+    body { padding: 10px; }
+    .masthead { gap: 8px; }
+    .identity { gap: 8px; }
+    .strapline { font-size: 8px; }
+    .edition { font-size: 8px; }
+    .story { padding-bottom: 3%; }
+  }
   @media print {
     @page { size: 1080px 1080px; margin: 0; }
     body { padding: 0; background: white; }
@@ -79,31 +164,43 @@
 </style>
 </head>
 <body>
-  <div class="instructions"><strong>Beyond Borders — නැවත භාවිත කළ හැකි Facebook පෝස්ට් ආකෘතිය.</strong> මෙම HTML ගොනුවේ ප්‍රධාන ශීර්ෂය, කෙටි විස්තරය සහ ලේබල් වෙනස් කරන්න. පුවත් ඡායාරූපයක් එක් කිරීමට CSS හි <code>.photo</code> කොටසේ <code>url('news-photo.jpg')</code> තුළ ඔබේ ඡායාරූපයේ නම යොදන්න. ඡායාරූපය HTML ගොනුව ඇති ෆෝල්ඩරයේම තබන්න. පෝස්ට් එක 1080 × 1080 ප්‍රමාණයෙන් සුරකින්න හෝ ග්‍රහණය කරන්න.</div>
-  <main class="post" aria-label="Beyond Borders Facebook news post template">
-    <div class="photo"></div>
-    <div class="photo-hint">ඔබේ පුවත් ඡායාරූපය මෙතැනට එක් කරන්න</div>
-    <header class="topbar">
-      <div class="brand">
-        <div class="mark">B</div>
+  <div class="instructions"><strong>Beyond Borders — editorial Facebook post template.</strong> පුවත් ඡායාරූපය <code>news-photo.jpg</code> ලෙස මෙම ගොනුව ඇති ෆෝල්ඩරයට දමන්න. ඉන්පසු පහළ ශීර්ෂය, විස්තරය සහ කාණ්ඩය ඔබේ පුවතට ගැළපෙන ලෙස වෙනස් කරන්න. 1080 × 1080 පෝස්ට් එකක් ලෙස Print → Save as PDF හෝ screenshot භාවිතයෙන් සුරැකිය හැක.</div>
+
+  <main class="post" aria-label="Beyond Borders editorial Facebook post">
+    <header class="masthead">
+      <div class="identity">
+        <div class="monogram">B.</div>
         <div>
-          <div class="brand-name">BEYOND BORDERS</div>
-          <div class="brand-sub">භූ දේශපාලනය • ලෝක පුවත්</div>
+          <div class="brand">BEYOND BORDERS</div>
+          <div class="strapline">සීමාවෙන් ඔබ්බට ලෝකය කියවමු</div>
         </div>
       </div>
-      <div class="tag">ලෝක පුවත්</div>
+      <div class="edition">
+        <strong>WORLD DESK</strong>
+        භූ දේශපාලනය · ලෝක පුවත්
+      </div>
     </header>
-    <div class="spacer"></div>
-    <section class="headline-area">
-      <div class="eyebrow">ගෝලීය විමසුම</div>
+
+    <section class="photo-wrap" aria-label="News photograph">
+      <div class="photo"></div>
+      <div class="photo-placeholder">
+        <strong>ADD YOUR NEWS PHOTO</strong>
+        <span>Replace news-photo.jpg with your image</span>
+      </div>
+      <div class="photo-caption">ඡායාරූප සටහන මෙතැන එක් කරන්න (අවශ්‍ය නම්)</div>
+    </section>
+
+    <section class="story">
+      <div class="kicker">ගෝලීය විමසුම / WORLD BRIEF</div>
       <h1>ඔබේ පුවත් ශීර්ෂය මෙතැන ලියන්න</h1>
-      <p class="summary">ප්‍රධාන සිදුවීම පිළිබඳ කෙටි, පැහැදිලි විස්තරයක් මෙතැන එක් කරන්න. ශීර්ෂයට වැඩි අවධානයක් ලැබෙන ලෙස වාක්‍ය එකකින් හෝ දෙකකින් ලියන්න.</p>
-      <footer class="footer">
-        <span><strong>BEYOND BORDERS</strong> · සිරස්තලයෙන් ඔබ්බට</span>
-        <span class="breaking">පුවත් • විශ්ලේෂණ</span>
+      <p class="summary">ප්‍රධාන සිදුවීමේ වැදගත්කම පැහැදිලි කරන කෙටි විස්තරයක් මෙතැන එක් කරන්න. සරලව, නිවැරදිව සහ කියවීමට පහසු ලෙස වාක්‍ය එකකින් හෝ දෙකකින් ලියන්න.</p>
+      <footer class="bottomline">
+        <span><strong>BEYOND BORDERS</strong> &nbsp;|&nbsp; සිරස්තලයෙන් ඔබ්බට</span>
+        <span class="category">විශ්ලේෂණ · පසුබිම · පුවත්</span>
       </footer>
     </section>
   </main>
-  <div class="edit-note">නිර්මාණ උපදෙස: පැහැදිලිව පෙනෙන පුවත් ඡායාරූපයක් භාවිත කරන්න. ශීර්ෂය කෙටිව තබා වැදගත් තොරතුරු පෝස්ට් එකේ දාරවලට ඉතා ආසන්නව නොතබන්න.</div>
+
+  <div class="edit-note">සටහන: සැබෑ පුවත් ඡායාරූපයක් එක් කළ පසු placeholder ඉවත් කරන්න. ඒ සඳහා CSS හි <code>.photo-placeholder</code> කොටස මකා දැමීම ප්‍රමාණවත්. දිගු ශීර්ෂ සඳහා අකුරු ප්‍රමාණය අඩු කරන්න; අතිරේක ලේබල් සහ අලංකාර අංග එක් කිරීමෙන් වළකින්න.</div>
 </body>
 </html>
