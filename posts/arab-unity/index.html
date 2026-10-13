@@ -9,6 +9,12 @@
   * { box-sizing:border-box; }
   body { margin:0; padding:28px; background:#e6e5e1; color:var(--ink); font-family:"FM Abhaya","FMAbhaya","Iskoola Pota","Nirmala UI",serif; }
   .instructions,.edit-note { max-width:1080px; margin:0 auto 16px; color:#33383d; font-size:14px; line-height:1.7; }
+  .toolbar { max-width:1080px; margin:0 auto 16px; display:flex; justify-content:flex-end; gap:10px; }
+  .view-button { border:0; border-radius:6px; padding:11px 16px; background:var(--ink); color:#fff; font:700 14px/1.2 "FM Abhaya","FMAbhaya","Iskoola Pota","Nirmala UI",sans-serif; cursor:pointer; }
+  .view-button:hover { background:var(--red); }
+  body.post-only { padding:0; background:#fff; }
+  body.post-only .instructions, body.post-only .edit-note, body.post-only .toolbar { display:none; }
+  body.post-only .post { width:min(100vw,1080px); height:auto; aspect-ratio:1; box-shadow:none; }
   .post { width:min(100%,1080px); aspect-ratio:1; margin:auto; overflow:hidden; display:flex; flex-direction:column; background:var(--paper); box-shadow:0 16px 48px rgba(20,22,24,.15); }
   .masthead { min-height:12%; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:3.3% 4.5%; border-top:9px solid var(--red); background:var(--paper); }
   .identity { display:flex; align-items:center; gap:14px; min-width:0; }
@@ -37,6 +43,7 @@
 </head>
 <body>
   <div class="instructions"><strong>Beyond Borders — editorial Facebook post.</strong> මෙම ෆෝල්ඩරයේ <code>arab_mapo.jpg</code> ඡායාරූපය භාවිතා කරයි. JPEG ලෙස සුරැකීමට browser screenshot එකක් ගෙන Paint තුළ JPEG ලෙස Save as කරන්න.</div>
+  <div class="toolbar"><button class="view-button" id="togglePostView" type="button" aria-pressed="false">Show only the post</button></div>
   <main class="post" aria-label="Beyond Borders editorial Facebook post">
     <header class="masthead">
       <div class="identity">
@@ -62,6 +69,12 @@
   </main>
   <div class="edit-note">ඡායාරූපය නොමැති විට placeholder එක පෙන්වනු ඇත.</div>
 <script>
+  const togglePostView = document.getElementById("togglePostView");
+  togglePostView.addEventListener("click", () => {
+    const onlyPost = document.body.classList.toggle("post-only");
+    togglePostView.textContent = onlyPost ? "Show editing notes" : "Show only the post";
+    togglePostView.setAttribute("aria-pressed", String(onlyPost));
+  });
   const imageCheck = new Image();
   imageCheck.onload = () => { const placeholder = document.querySelector(".photo-placeholder"); if (placeholder) placeholder.style.display = "none"; };
   imageCheck.src = "arab_mapo.jpg";
