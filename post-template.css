@@ -1,6 +1,6 @@
 :root {
   --ink: #15191f;
-  --paper: #fff0cf;
+  --paper: #ECEFF1;
   --red: #c51f32;
   --muted: #686d74;
   --line: #d8d5ce;
@@ -63,7 +63,7 @@ body {
   padding:2.8% 4.5%;
   border-top:10px solid var(--red);
   border-bottom:1px solid rgba(21,25,31,.08);
-  background:linear-gradient(110deg,#fffaf0 0%,#ffe3a8 100%);
+  background:linear-gradient(110deg,#FAFBFC 0%,#E2E7EA 100%);
 }
 .identity { display:flex; align-items:center; gap:14px; min-width:0; }
 .brand-logo {
@@ -118,7 +118,7 @@ body {
   text-align:center;
   color:#353a3e;
   padding:24px;
-  background:repeating-linear-gradient(135deg,#fff0cf,#fff0cf 14px,#ffe4aa 14px,#ffe4aa 28px);
+  background:repeating-linear-gradient(135deg,#ECEFF1,#ECEFF1 14px,#DDE3E6 14px,#DDE3E6 28px);
 }
 .photo-placeholder strong { font:900 clamp(18px,2.8vw,30px)/1.2 Georgia,serif; letter-spacing:.1em; }
 .photo-placeholder span { margin-top:10px; font-size:clamp(11px,1.4vw,15px); }
